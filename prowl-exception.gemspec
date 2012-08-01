@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = %w{ Send exception summary to prowl }
   s.homepage    = 'https://github.com/afhbl/prowl-exception'
 
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.date        = '2012-08-01'
   s.files       = `git ls-files`.split("\n")
 
