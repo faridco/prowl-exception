@@ -1,4 +1,4 @@
-require 'prowl_exception/rack'
+require 'prowl/rack'
 
 module ProwlException
   class Railtie < ::Rails::Railtie
