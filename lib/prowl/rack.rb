@@ -13,7 +13,7 @@ module Rack
       begin
         body = @app.call(env)
       rescue => boom
-        send_prowl_notification boom, env
+        send_prowl_notification boom, env unless ActiveRecord::RecordNotFound === boom
         raise
       end
 
@@ -21,9 +21,9 @@ module Rack
     end
 
     private
-    
+
     def send_prowl_notification exception, env
-      request = Rack::Request.new env 
+      request = Rack::Request.new env
       Prowler.notify exception.class.to_s, @template.result(binding)
     end
 
